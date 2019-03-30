@@ -1,7 +1,7 @@
 <template>
     <div id="front_face" class="surface_1 animated zoomIn">
            <animatingSmallCircles/>
-          <div id="prime-msg">
+          <div id="primeMsg">
               <h1>Welcome {{user.name}}</h1>
            </div>    
            
@@ -11,6 +11,13 @@
 </template>
 
 <script>
+function textToSpeech()
+{
+    let text=primeMsg.innerText;
+    let msg = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(msg);
+    console.log('Called');
+}
 import animatingSmallCircles from './animating-circles'
 export default {
     components:
@@ -20,6 +27,10 @@ export default {
     props:{
         
         user:Object,
+    },
+    mounted()
+    {
+        textToSpeech();
     }
 }
 </script>
@@ -35,13 +46,23 @@ export default {
     margin: auto;
     display: grid;
 }
-#prime-msg
+#primeMsg
 {
+    font-size: 2vmin;
     display: grid;
+    text-align:center
 }
-#prime-msg h1 {
+#primeMsg h1 {
     margin: auto;
     letter-spacing: 2px;
 }
+@media only screen and (max-width: 480px) {
+    #front_face
+    {
+        width: 50vh;
+        height: 50vh;
+    }
+  }
+
 
 </style>

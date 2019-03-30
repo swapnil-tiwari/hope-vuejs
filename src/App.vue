@@ -4,9 +4,10 @@
     </div>
     <div class="overlay"></div>
     <div class="main-cont">
-      <frontFace :user="{name:'Swapnil'}">
+      <locationBox/>
+      <timeBox/>
+      <frontFace :user="{name:'Swapnil'}"/>
         
-      </frontFace> 
     </div> 
     
   </div>
@@ -14,12 +15,17 @@
 
 <script>
 import frontFace from './components/front-face'
+import locationBox from './components/location-box'
+import timeBox from './components/time-box'
 export default {
   name: 'App',
   components: {
     frontFace,
+    locationBox,
+    timeBox
     
-  }
+  },
+  
 }
 </script>
 
@@ -30,7 +36,6 @@ export default {
 #app {
   font-family: 'Raleway', sans-serif;
   font-weight: unset;
-  text-align: center;
   color: #fff;
 }
 

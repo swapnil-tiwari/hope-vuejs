@@ -18,7 +18,7 @@ body
   width: 100%;
   height: 100%;
   position: fixed;
-  background: #000000c4;
+  background: #00000085;
 }
 .main-cont
 {
@@ -30,5 +30,7 @@ body
 .surface_1
 {
     box-shadow:0 0 15px 3px #060c29;
+    background:#000000c7;
 
 }
+
